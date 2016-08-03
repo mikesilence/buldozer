@@ -7,9 +7,15 @@ var AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = {
   entry:  {
+    bootstrap: [
+      path.resolve(__dirname, 'assets', 'javascripts', 'bootstrap.js'),
+      path.resolve(__dirname, 'assets', 'javascripts', 'bootstrap-sprockets.js'),
+      path.resolve(__dirname, 'assets', 'stylesheets', '_bootstrap.scss'),
+      path.resolve(__dirname, 'assets', 'stylesheets', 'shop-homepage.css'),
+    ],
     application: [
-      path.resolve(__dirname, 'assets', 'sass', 'application.sass'),
-      path.resolve(__dirname, 'assets', 'js', 'application.js'),
+      // path.resolve(__dirname, 'assets', 'sass', 'application.sass'),
+      path.resolve(__dirname, 'assets', 'javascripts', 'application.js'),
     ]
   },
   output: {
@@ -35,7 +41,13 @@ module.exports = {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'url?name=images/[hash].[ext]&limit=5000',
     }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version'),
+    }, {
       test: /\.sass$/,
+      loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version!sass?sourceMap&indentedSyntax'),
+    }, {
+      test: /\.scss$/,
       loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version!sass?sourceMap&indentedSyntax'),
     }],
   },
