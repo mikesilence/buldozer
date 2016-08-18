@@ -98,8 +98,9 @@ application = function() {
   if (list) {
     for (var i = 0; i < storage.length; i++) {
       items.push(template(storage[i]));
-      list.innerHTML = items.join('');
     }
+
+    list.innerHTML = items.join('');
   }
 }
 
