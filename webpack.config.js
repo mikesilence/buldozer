@@ -16,6 +16,9 @@ module.exports = {
     application: [
       // path.resolve(__dirname, 'assets', 'sass', 'application.sass'),
       path.resolve(__dirname, 'assets', 'javascripts', 'application.js'),
+    ],
+    template: [
+      path.resolve(__dirname, 'template', 'index.js'),
     ]
   },
   output: {
