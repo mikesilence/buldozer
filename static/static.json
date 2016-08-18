@@ -5,5 +5,8 @@
   "bootstrap": {
     "js": "../bootstrap/bootstrap.js",
     "css": "../bootstrap/bootstrap.css"
+  },
+  "template": {
+    "js": "../template/template.js"
   }
 }
