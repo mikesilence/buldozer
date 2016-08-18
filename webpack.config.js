@@ -50,8 +50,8 @@ module.exports = {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version!sass?sourceMap&indentedSyntax'),
     }, {
-      include: /\.pug/,
-      loader: 'pug-html-loader'
+      test: /\.pug$/,
+      loader: 'pug-loader'
     }],
   },
 
