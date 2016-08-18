@@ -2,7 +2,7 @@
   "name": "quest",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack"
@@ -28,7 +28,7 @@
     "node-sass": "^3.7.0",
     "npmconf": "^2.1.2",
     "pug": "^2.0.0-beta5",
-    "pug-html-loader": "^1.0.8",
+    "pug-loader": "^2.2.1",
     "sass-loader": "^3.2.0",
     "scss-loader": "0.0.1",
     "underscore": "^1.8.3",

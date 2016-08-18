@@ -16,6 +16,9 @@ module.exports = {
     application: [
       // path.resolve(__dirname, 'assets', 'sass', 'application.sass'),
       path.resolve(__dirname, 'assets', 'javascripts', 'application.js'),
+    ],
+    template: [
+      path.resolve(__dirname, 'template', 'index.js'),
     ]
   },
   output: {
@@ -49,6 +52,9 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version!sass?sourceMap&indentedSyntax'),
+    }, {
+      test: /\.pug$/,
+      loader: 'pug-loader'
     }],
   },
 
