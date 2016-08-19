@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var AssetsPlugin = require('assets-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry:  {
@@ -16,9 +17,6 @@ module.exports = {
     application: [
       // path.resolve(__dirname, 'assets', 'sass', 'application.sass'),
       path.resolve(__dirname, 'assets', 'javascripts', 'application.js'),
-    ],
-    template: [
-      path.resolve(__dirname, 'template', 'index.js'),
     ]
   },
   output: {
@@ -72,6 +70,10 @@ module.exports = {
       path: path.resolve(__dirname, 'static'),
       update: true,
       prettyPrint: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'template', 'index.pug')
     })
   ]
 
