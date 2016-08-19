@@ -1,2 +1,2 @@
-require('./junior.js');
+// require('./junior.js');
 // require('./underscore.js');
