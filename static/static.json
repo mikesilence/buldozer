@@ -1,9 +1,0 @@
-{
-  "application": {
-    "js": "../application/application.js"
-  },
-  "bootstrap": {
-    "js": "../bootstrap/bootstrap.js",
-    "css": "../bootstrap/bootstrap.css"
-  }
-}

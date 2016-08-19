@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var AssetsPlugin = require('assets-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry:  {
@@ -49,6 +50,9 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version!sass?sourceMap&indentedSyntax'),
+    }, {
+      test: /\.pug$/,
+      loader: 'pug-loader'
     }],
   },
 
@@ -66,6 +70,10 @@ module.exports = {
       path: path.resolve(__dirname, 'static'),
       update: true,
       prettyPrint: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'template', 'index.pug')
     })
   ]
 
