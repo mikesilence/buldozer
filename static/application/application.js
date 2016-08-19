@@ -49,6 +49,12 @@
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(2);
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -151,8 +157,9 @@
 	  if (list) {
 	    for (var i = 0; i < storage.length; i++) {
 	      items.push(template(storage[i]));
-	      list.innerHTML = items.join('');
 	    }
+	
+	    list.innerHTML = items.join('');
 	  }
 	}
 	
