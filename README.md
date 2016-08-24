@@ -4,7 +4,9 @@ https://github.com/mikesilence/buldozer.git
 Управление:
 ```
 git clone https://github.com/mikesilence/buldozer.git
+cd buldozer
 npm install webpack webpack-dev-server -g
+npm i
 npm run stage[номер примера]
 ```
 
