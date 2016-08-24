@@ -1,17 +1,28 @@
 {
   "name": "quest",
+  
   "version": "1.0.0",
+  
   "description": "",
+  
   "main": "index.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack"
+    "stage00": "webpack-dev-server --colors --port 9090",
+    "stage01": "webpack-dev-server --colors --port 9090",
+    "stage02": "webpack-dev-server --colors --port 9090",
+    "stage03": "webpack-dev-server --colors --port 9090"
   },
+  
   "repository": {
     "type": "git"
   },
+  
   "author": "m.khromov",
+  
   "license": "ISC",
+  
   "dependencies": {
     "assets-webpack-plugin": "^3.4.0",
     "autoprefixer-loader": "^3.2.0",
@@ -35,6 +46,7 @@
     "scss-loader": "0.0.1",
     "underscore": "^1.8.3",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.15.0"
   }
 }
