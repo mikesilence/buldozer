@@ -1,12 +1,13 @@
 'use strict';
 
+var config;
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var AssetsPlugin = require('assets-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+config = {
   entry:  {
     bootstrap: [
       path.resolve(__dirname, 'assets', 'javascripts', 'bootstrap.js'),
@@ -50,9 +51,6 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('css!autoprefixer-loader?browsers=last 5 version!sass?sourceMap&indentedSyntax'),
-    }, {
-      test: /\.pug$/,
-      loader: 'pug-loader'
     }],
   },
 
@@ -63,18 +61,27 @@ module.exports = {
   devtool: 'source-map',
 
   plugins: [
-    // new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('[name]/[name].css', {allChunks: true}),
     new AssetsPlugin({
       filename: 'static.json',
       path: path.resolve(__dirname, 'static'),
       update: true,
       prettyPrint: true,
-    }),
-    new HtmlWebpackPlugin({
+    })
+  ]
+};
+
+if (process.env.NODE_VER === 'stage03') {
+  config.module.loaders.push({
+    test: /\.pug$/,
+    loader: 'pug-loader'
+  })
+
+  config.plugins.push(new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'template', 'index.pug')
     })
-  ]
+  )
+}
 
-};
+module.exports = config;
