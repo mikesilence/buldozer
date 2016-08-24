@@ -15,10 +15,13 @@ config = {
       path.resolve(__dirname, 'assets', 'stylesheets', '_bootstrap.scss'),
       path.resolve(__dirname, 'assets', 'stylesheets', 'shop-homepage.css'),
     ],
+
     application: [
-      // path.resolve(__dirname, 'assets', 'sass', 'application.sass'),
-      path.resolve(__dirname, 'assets', 'javascripts', 'application.js'),
+      path.resolve(__dirname, 'assets', 'javascripts', 'application.js')
     ]
+
+    // stage01: path.resolve(__dirname, 'assets', 'javascripts', 'junior.js'),
+    // stage02: path.resolve(__dirname, 'assets', 'javascripts', 'underscore.js')
   },
   output: {
     path: path.resolve(__dirname, 'static'),
@@ -70,6 +73,14 @@ config = {
     })
   ]
 };
+
+if (process.env.NODE_VER === 'stage01') {
+  config.entry.application.push(path.resolve(__dirname, 'assets', 'javascripts', 'junior.js'));
+}
+
+if (process.env.NODE_VER === 'stage02') {
+  config.entry.application.push(path.resolve(__dirname, 'assets', 'javascripts', 'underscore.js'));
+}
 
 if (process.env.NODE_VER === 'stage03') {
   config.module.loaders.push({

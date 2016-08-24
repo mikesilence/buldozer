@@ -53,6 +53,8 @@ application = function() {
   var list = document.querySelector('.js-list');
   var items = [];
 
+  console.log(list);
+
   if (list) {
     for (var i = 0; i < storage.length; i++) {
       items.push(template(storage[i]));
@@ -61,5 +63,5 @@ application = function() {
     list.innerHTML = items.join('');
   }
 }
-
+console.log('sdadsds')
 application();

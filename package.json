@@ -9,10 +9,11 @@
   
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stage00": "rm -rf ./static/* && webpack-dev-server --colors --port 9090 NODE_VER=stage00",
-    "stage01": "rm -rf ./static/* && webpack-dev-server --colors --port 9090 NODE_VER=stage01",
-    "stage02": "rm -rf ./static/* && webpack-dev-server --colors --port 9090 NODE_VER=stage02",
-    "stage03": "rm -rf ./static/* && webpack-dev-server --colors --port 9090 NODE_VER=stage03"
+    "start": "rm -rf ./static/*",
+    "stage00": "npm run start && webpack & webpack-dev-server --content-base --colors --port 9090 ./",
+    "stage01": "npm run start && NODE_VER=stage01 webpack & webpack-dev-server --content-base --colors --port 9090 ./",
+    "stage02": "npm run start && NODE_VER=stage02 webpack & webpack-dev-server --content-base --colors --port 9090 ./",
+    "stage03": "npm run start && NODE_VER=stage03 webpack & webpack-dev-server --content-base --colors --port 9090 ./"
   },
   
   "repository": {
