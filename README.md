@@ -10,6 +10,24 @@ npm i
 npm run stage[номер примера]
 ```
 
+Окружение с которым мы работаем:
+```
+- assets
+- - javascript
+- - - junior.js
+- - - underscore.js
+- - - storage.js
+
+- template
+- - index.pug
+- - items.pug
+
+- static
+- - index.html
+
+- index.html
+```
+
 Представим, что нам поступил заказ на мегакрутой интернет-магазин квадрокоптеров. А заказчик, сам Иван Гуглов, очень суровый мужик просит сделать все максимально быстро и качественно.
 
 ![О боже](http://book.yd73.ru/wp-content/uploads/2014/04/note.png)
